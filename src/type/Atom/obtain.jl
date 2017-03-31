@@ -1,3 +1,6 @@
+using SimpleMolecule.Types.Atom
+
+
 """
 A getter function for objects of type ``Atom``.
 It also provides information not physically stored in the ``Atom`` object

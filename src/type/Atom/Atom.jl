@@ -1,3 +1,6 @@
+import SimpleMolecule.Abstract.AbstractMolecularContainer
+
+
 """
 A ``Atom`` (immutable) object stores all the information
 about an atom. 
@@ -43,6 +46,7 @@ each column represents one Cartesian dimension.
 +--------------------+-------------------------+-----------------------------------+
 
 """
+
 immutable Atom <: AbstractMolecularContainer
     index::Integer # sequential index
     raw_atom_name::AbstractString # preserving space characters
@@ -66,6 +70,8 @@ end
 
 # constructor with keyword arguments
 include("constructor_0.jl")
+include("clone.jl")
+include("comparison.jl")
+include("features.jl")
+include("obtain.jl")
 
-# fulfill the interface defined by the MolecularContainer typeclass
-include("typeclass.jl")

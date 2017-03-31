@@ -4,22 +4,37 @@ __precompile__()
 for containing molecular informations
 """
 module SimpleMolecule
-macro debug(expression)
-    return :(@assert $expression)
-    # return nothing
+
+module Macros
+include(joinpath("macro", "debug.jl"))
+include(joinpath("macro", "debug_info.jl"))
+export debug, debug_info
 end
 
-macro debug_info(expression)
-    return :($expression)
+module Abstract
+include(joinpath("abstract", "AbstractMolecularContainer.jl"))
+export AbstractMolecularContainer
 end
 
-include(joinpath("type", "Types.jl"))
-include(joinpath("fn", "Fn.jl"))
+module Types
+include(joinpath("type", "all.jl"))
+export Atom
+end
+
+module TypeClasses
+include(joinpath("typeclass", "all.jl"))
+export MolecularContainer
+export obtain, clone, features, ==
+end
 
 
-module 
+
+using .Abstract
 using .Types
+using .TypeClasses
 
-export obtain
-export AbstractMolecularContainer, Atom
+export AbstractMolecularContainer
+export Atom
+export MolecularContainer
+export obtain, features, clone
 end
