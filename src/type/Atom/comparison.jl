@@ -1,6 +1,4 @@
 import Base.==
-using SimpleMolecule.Types.Atom
-
 
 """
 Define the meaning of "==" operator for type Atom 

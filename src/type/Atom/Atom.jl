@@ -1,4 +1,4 @@
-import SimpleMolecule.Abstract.AbstractMolecularContainer
+import ..Abstract.AbstractMolecularContainer
 
 
 """
