@@ -13,9 +13,13 @@ macro debug_info(expression)
     return :($expression)
 end
 
-export obtain
-export Atom
+include(joinpath("type", "Types.jl"))
+include(joinpath("fn", "Fn.jl"))
 
-include(joinpath("type", "abstract", "AbstractMolecularContainer.jl"))
-include(joinpath("type", "Atom", "Atom.jl"))
+
+module 
+using .Types
+
+export obtain
+export AbstractMolecularContainer, Atom
 end
