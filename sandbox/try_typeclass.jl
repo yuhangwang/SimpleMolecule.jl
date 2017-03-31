@@ -13,7 +13,7 @@ end
 
 @instance Copyable Me begin
     clone(x::Me) = Me(x.self + 1)
-    obtain(x::Me, s::Symbol) = s 
+    obtain(x::Me, s::Symbol) = s
 end
 
 export Me, clone, obtain, Copyable
@@ -30,8 +30,12 @@ type Me2
     self::Int
 end
 @instance Copyable Me2 begin
-    clone(x::Me2) = Me(x.self + 100)
-    obtain(x::Me2, s::Symbol) = s
+    function clone(x::Me2)
+        Me(x.self + 100)
+    end
+    function obtain(x::Me2, s::Symbol)
+        s
+    end
 end
 
 x2 = Me2(1)

@@ -43,7 +43,7 @@ each column represents one Cartesian dimension.
 +--------------------+-------------------------+-----------------------------------+
 
 """
-type Atom <: AbstractMolecularContainer
+immutable Atom <: AbstractMolecularContainer
     index::Integer # sequential index
     raw_atom_name::AbstractString # preserving space characters
     atom_name::AbstractString # name without spaces
@@ -67,9 +67,5 @@ end
 # constructor with keyword arguments
 include("constructor_0.jl")
 
-# Define behaviors of common operators on type Atom
-include("comparison.jl")
-
-# Define the getter function
-include("obtain.jl")
-
+# fulfill the interface defined by the MolecularContainer typeclass
+include("typeclass.jl")
