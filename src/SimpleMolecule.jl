@@ -24,7 +24,7 @@ end
 module TypeClasses
 include(joinpath("typeclass", "all.jl"))
 export MolecularContainer
-export obtain, clone, features, ==
+export obtain, clone, features
 end
 
 

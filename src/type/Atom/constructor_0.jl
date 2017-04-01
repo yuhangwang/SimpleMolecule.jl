@@ -79,7 +79,6 @@ function Atom(;
     return Atom(
         index,
         atom_name,
-        strip(atom_name),
         atom_type,
         alt_location,
         insertion,
@@ -93,5 +92,5 @@ function Atom(;
         segment_name,
         chain_name,
         system_name,
-        Array[coordinate])
+        coordinate)
 end

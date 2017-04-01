@@ -15,7 +15,6 @@ function ==(atom1::Atom, atom2::Atom)
     tol = 1e-5 # tolerance for floating point number comparison
 
     for field in fieldnames(atom1)
-        println(field)
         value1 = getfield(atom1, field)
         value2 = getfield(atom2, field)
 

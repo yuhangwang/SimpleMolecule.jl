@@ -49,7 +49,6 @@ each column represents one Cartesian dimension.
 
 immutable Atom <: AbstractMolecularContainer
     index::Integer # sequential index
-    raw_atom_name::AbstractString # preserving space characters
     atom_name::AbstractString # name without spaces
     atom_type::AbstractString # atom type name
     alt_location::Char # 17
@@ -65,7 +64,7 @@ immutable Atom <: AbstractMolecularContainer
     chain_name::AbstractString
     system_name::AbstractString
 
-    coordinate::Array{Array{AbstractFloat,1}} 
+    coordinate::Array{AbstractFloat,1}
 end
 
 # constructor with keyword arguments

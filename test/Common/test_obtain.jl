@@ -24,7 +24,7 @@ function test_obtain{T<:AbstractMolecularContainer}(
     solution::Any)
 
     println("----------------------------------------")
-    print_with_color(:blue, "Test obtain(obj,:$(field)) for type Atom\n\n")
+    print_with_color(:blue, "Test obtain(obj,:$(field))\n\n")
 
     answer = obtain(obj, field)
 

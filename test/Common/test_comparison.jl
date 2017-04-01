@@ -26,7 +26,7 @@ function test_comparison{T<:AbstractMolecularContainer}(
     msg::AbstractString="")
 
     println("----------------------------------------")
-    print_with_color(:blue, "Test ==() for type Atom\n\n")
+    print_with_color(:blue, "Test ==()\n\n")
 
     if msg != ""
         print_with_color(:blue, msg)

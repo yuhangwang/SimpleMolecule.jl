@@ -20,7 +20,7 @@ function test_constructor{T<:AbstractMolecularContainer}(
     props::Dict,
     solution::T)
     println("-------------------------------------------------")
-    print_with_color(:blue, "Test constructor 1 for Atom\n\n")
+    print_with_color(:blue, "Test constructor\n\n")
 
     answer = typeConstructor(; props...)
 
