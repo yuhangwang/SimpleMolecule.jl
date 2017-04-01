@@ -1,7 +1,6 @@
-using Base.Test
-
 include(joinpath("..","src","SimpleMolecule.jl"))
+include(joinpath("Common", "Common.jl"))
+include(joinpath("TestAtom", "TestAtom.jl"))
 
-using SimpleMolecule
+TestAtom.run_tests()
 
-include(joinpath("Atom", "runtests.jl"))

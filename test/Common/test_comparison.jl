@@ -1,14 +1,17 @@
+import SimpleMolecule.AbstractMolecularContainer
+
+
 """
 A test for the comparison operator "==" between 
-two objects of type Atom.
+two objects of type AbstractMolecularContainer.
 
 Arguments
 ----------
-obj1:Atom
-    An instance of type Atom.
+obj1:AbstractMolecularContainer
+    An instance of type AbstractMolecularContainer.
 
-obj2:Atom
-    Another instance of type Atom.
+obj2:AbstractMolecularContainer
+    Another instance of type AbstractMolecularContainer.
 
 key:Bool
     The answer key.
@@ -16,9 +19,9 @@ key:Bool
 msg:AbstractString
     optional message to identify the nature of the test 
 """
-function test_comparison_Atom(
-    obj1::Atom,
-    obj2::Atom,
+function test_comparison{T<:AbstractMolecularContainer}(
+    obj1::T,
+    obj2::T,
     solution::Bool,
     msg::AbstractString="")
 
@@ -38,5 +41,3 @@ function test_comparison_Atom(
 
     return true
 end
-
-include("unit_tests_comparison.jl")

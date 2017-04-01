@@ -16,23 +16,11 @@ Arguments
 index:Integer
     atom sequential index
 
-residue_name:AbstractString
-    residue name
-
-residue_id:Integer
-    residue ID 
-
-segment_name:AbstractString
-    segment name 
-
-chain_name:AbstractString
-    chain name 
-
-system_name:AbstractString
-    molecular system name
-
 atom_name:AbstractString
     raw atom name (with extra spaces if exist)
+
+atom_type:AbstractString
+    atom type
 
 alt_location:Char 
     alternative location indicator 
@@ -52,20 +40,26 @@ element:AbstractString
 charge:Integer
     charge of the atom 
 
-topology:TopologicAtom
-    topologic information 
+residue_name:AbstractString
+    residue name
+
+residue_id:Integer
+    residue ID 
+
+segment_name:AbstractString
+    segment name 
+
+chain_name:AbstractString
+    chain name 
+
+system_name:AbstractString
+    molecular system name
 
 coordinate:Array{AbstractFloat,1}
     atomic coordinate 
-
 """
 function Atom(;
     index::Integer=0,
-    residue_name::AbstractString="",
-    residue_id::Integer=0,
-    segment_name::AbstractString="",
-    chain_name::AbstractString="",
-    system_name::AbstractString="",
     atom_name::AbstractString="",
     atom_type::AbstractString="",
     alt_location::Char=' ',
@@ -74,7 +68,13 @@ function Atom(;
     beta::AbstractFloat=0.,
     element::AbstractString="",
     charge::Integer=0, 
-    coordinate::Array=Array{AbstractFloat,1}()
+    coordinate::Array=Array{AbstractFloat,1}(),
+    
+    residue_name::AbstractString="",
+    residue_id::Integer=0,
+    segment_name::AbstractString="",
+    chain_name::AbstractString="",
+    system_name::AbstractString=""
     )
     return Atom(
         index,

@@ -1,3 +1,7 @@
+import SimpleMolecule.AbstractMolecularContainer
+import SimpleMolecule.obtain
+
+
 """
 A test for obtain the value of 
 a field in an object
@@ -14,7 +18,11 @@ field:Symbol
 solution:Any
     answer key
 """
-function test_obtain_Atom(obj::Atom, field::Symbol, solution::Any)
+function test_obtain{T<:AbstractMolecularContainer}(
+    obj::T,
+    field::Symbol,
+    solution::Any)
+
     println("----------------------------------------")
     print_with_color(:blue, "Test obtain(obj,:$(field)) for type Atom\n\n")
 
@@ -32,5 +40,3 @@ function test_obtain_Atom(obj::Atom, field::Symbol, solution::Any)
 
     return true 
 end
-
-include("unit_tests_obtain.jl")
