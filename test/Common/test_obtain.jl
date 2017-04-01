@@ -1,6 +1,6 @@
 import SimpleMolecule.AbstractMolecularContainer
 import SimpleMolecule.obtain
-
+import SimpleMolecule
 
 """
 A test for obtain the value of 

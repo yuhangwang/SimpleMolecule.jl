@@ -6,9 +6,6 @@ A test for constructor_1 for ``Atom``.
 
 Arguments
 ----------
-typeConstructor:Function
-    constructor
-
 props:Dict
     property dictionary
 
@@ -16,13 +13,12 @@ solution:Atom
     answer key
 """
 function test_constructor{T<:AbstractMolecularContainer}(
-    typeConstructor,
     props::Dict,
     solution::T)
     println("-------------------------------------------------")
     print_with_color(:blue, "Test constructor\n\n")
 
-    answer = typeConstructor(; props...)
+    answer = T(; props...)
 
     for field in fieldnames(solution)
         if obtain(answer, field) != obtain(solution, field)

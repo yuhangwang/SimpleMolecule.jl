@@ -1,1 +1,5 @@
 include("AbstractMolecularContainer.jl")
+include("features.jl")
+include("obtain.jl")
+include("clone.jl")
+include("comparison.jl")

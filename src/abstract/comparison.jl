@@ -1,17 +1,9 @@
 import Base.==
 
 """
-Define the meaning of "==" operator for type Atom 
-
-Arguments 
-----------
-atom1:Atom 
-    An instance of type Atom.
-
-atom2:Atom 
-    Another instance of type Atom.
+Define the meaning of "==" operator
 """
-function ==(atom1::Atom, atom2::Atom)
+function =={T<:AbstractMolecularContainer}(atom1::T, atom2::T)
     tol = 1e-5 # tolerance for floating point number comparison
 
     for field in fieldnames(atom1)
@@ -23,15 +15,23 @@ function ==(atom1::Atom, atom2::Atom)
                 return false
             end
 
-        elseif field == :coordinate 
+        elseif issubtype(typeof(value1), AbstractArray)
             if length(value1) != length(value2)
                 return false
             end
 
             for i = 1:length(value1)
-                for j = 1:length(value1[i])
-                    if abs(value1[i][j] - value2[i][j]) > tol 
-                        return false 
+                if issubtype(typeof(value1[i]), AbstractFloat)
+                    if abs(value1[i] - value2[i]) > tol
+                        return false
+                    else
+                        continue
+                    end
+                else
+                    if value1[i] != value2[i]
+                        return false
+                    else
+                        continue
                     end
                 end
             end

@@ -12,7 +12,7 @@ export debug, debug_info
 end
 
 module Abstract
-include(joinpath("abstract", "AbstractMolecularContainer.jl"))
+include(joinpath("abstract", "all.jl"))
 export AbstractMolecularContainer
 end
 

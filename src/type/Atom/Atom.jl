@@ -69,8 +69,4 @@ end
 
 # constructor with keyword arguments
 include("constructor_0.jl")
-include("clone.jl")
-include("comparison.jl")
-include("features.jl")
-include("obtain.jl")
 

@@ -11,7 +11,7 @@ obj:Atom
 field:Symbol
     the requested field name
 """
-function obtain(obj::Atom, field::Symbol)
+function obtain{T<:AbstractMolecularContainer}(obj::T, field::Symbol)
     if field in fieldnames(obj)
         return getfield(obj, field)
     else
