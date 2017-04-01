@@ -4,4 +4,4 @@ include(joinpath("TestAtom", "TestAtom.jl"))
 include(joinpath("TestMolecule", "TestMolecule.jl"))
 
 TestAtom.run_tests()
-
+TestMolecule.run_tests()

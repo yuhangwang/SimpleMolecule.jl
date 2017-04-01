@@ -18,7 +18,7 @@ end
 
 module Types
 include(joinpath("type", "all.jl"))
-export Atom
+export Atom, Molecule
 end
 
 module TypeClasses
@@ -34,7 +34,7 @@ using .Types
 using .TypeClasses
 
 export AbstractMolecularContainer
-export Atom
 export MolecularContainer
+export Atom, Molecule
 export obtain, features, clone
 end

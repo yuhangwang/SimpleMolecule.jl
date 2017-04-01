@@ -36,7 +36,7 @@ function test_comparison{T<:AbstractMolecularContainer}(
 
     @test answer == solution 
 
-    print_with_color(:green, "\nVERIFIED! ==() for type Atom\n")
+    print_with_color(:green, "\nVERIFIED! ==()\n")
     println("----------------------------------------\n\n")
 
     return true

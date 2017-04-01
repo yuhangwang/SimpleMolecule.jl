@@ -68,5 +68,5 @@ immutable Atom <: AbstractMolecularContainer
 end
 
 # constructor with keyword arguments
-include("constructor_0.jl")
+include("constructor.jl")
 
